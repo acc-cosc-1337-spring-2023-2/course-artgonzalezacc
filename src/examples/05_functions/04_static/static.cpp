@@ -9,3 +9,11 @@ void use_static_var()
     num++;
     cout<<num<<"\n";
 }
+
+void use_static_var1()
+{
+    static auto num = 0;
+    cout<<&num<<"\n";
+    num++;
+    cout<<num<<"\n";
+}
