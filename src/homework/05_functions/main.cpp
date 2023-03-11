@@ -1,3 +1,5 @@
+#include "func.h"
+
 /*
 use a vector of int with values 8, 4, 20, 88, 66, 99
 
@@ -9,6 +11,7 @@ Program continues until user decides to exit.
 */
 int main() 
 {
+	run_menu();
 
 	return 0;
 }
