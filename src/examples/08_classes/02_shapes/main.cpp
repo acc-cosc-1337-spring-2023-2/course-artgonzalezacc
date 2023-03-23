@@ -13,6 +13,16 @@ iterate with auto
 
 int main() 
 {
+	Shape* shape;//I will create or point to stack memory or the heap later
+	Circle circle;
+
+	shape = &circle;
+	shape->draw();
+
+	Line line;
+
+	shape = &line;
+	shape->draw();
 
 	return 0;
 }
