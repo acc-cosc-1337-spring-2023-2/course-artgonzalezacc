@@ -1,27 +1,23 @@
 #include<iostream>
-#include<memory>
 #include<time.h>
 #include<vector>
 #include "atm.h"
-#include "checking_account.h"
-#include "savings_account.h"
+#include "customer.h"
 
-using std::cout; using std::cin; using std::vector;
-using std::unique_ptr; using std::make_unique;
-using std::move;
+using std::vector;
 
 int main()
-{	
-	vector<unique_ptr<BankAccount>> accounts;
+{
 	srand(time(NULL));
+	
+	vector<Customer> customers;//empty customer list
+	customers.push_back(Customer());
+	customers.push_back(Customer());
+	customers.push_back(Customer());
+	customers.push_back(Customer());
+	customers.push_back(Customer());
 
-	accounts.push_back(make_unique<CheckingAccount>());
-	accounts.push_back(make_unique<SavingsAccount>());
-
-	cout<<accounts[0]->get_balance()<<"\n";
-	cout<<accounts[1]->get_balance()<<"\n";
-
-	run_menu(accounts);
+	run_menu(customers);
 
 	return 0;
 }
