@@ -1,9 +1,9 @@
 #include "bank_account.h"
-/*
+
 int BankAccount::get_balance() const
 {
     return balance;
-}*/
+}
 //bank_account.cpp
 void BankAccount::get_balance_from_db()
 {   
