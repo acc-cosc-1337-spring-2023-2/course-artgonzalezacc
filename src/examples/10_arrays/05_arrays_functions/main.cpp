@@ -5,15 +5,16 @@ using std::cout;
 
 int main() 
 {
-	//more code
-	//more code
-	memory_leak();
-	//more code
-	//more code
-	memory_leak();
-	memory_leak();
-	memory_leak();
-	memory_leak();
+	//dangling pointer
+	int* num = new int(5);
+	//another pointer points to data
+	//lots of code here
+	int* num2 = num;
+	//some other region of code; data is deleted
+	delete num;
+
+	//try to reuse deleted memory(data)
+	cout<<*num2<<"\n";
 
 	return 0;
 }
