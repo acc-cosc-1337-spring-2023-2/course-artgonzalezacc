@@ -11,10 +11,12 @@ int main()
 	//lots of code here
 	int* num2 = num;
 	//some other region of code; data is deleted
+	cout<<*num2<<"\n";
 	delete num;
 
 	//try to reuse deleted memory(data)
 	cout<<*num2<<"\n";
+	delete num2;
 
 	return 0;
 }
