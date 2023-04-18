@@ -17,6 +17,7 @@ Vector::~Vector()
 
 //NOT A CLASS FUNCTION; THESE ARE FREE FUNCTIONS
 void use_vector()
-{  
-    Vector v(3);
+{   //do not create dynamic memory for v; use a stack variable Vector v(3);
+    Vector* v = new Vector(3);
+    delete v;
 }
