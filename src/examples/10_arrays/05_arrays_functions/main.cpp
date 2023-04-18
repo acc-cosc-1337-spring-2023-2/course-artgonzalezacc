@@ -1,22 +1,14 @@
 #include "arr_functions.h"
-#include<iostream>
 
 using std::cout;
 
 int main() 
 {
-	//dangling pointer
-	int* num = new int(5);
-	//another pointer points to data
-	//lots of code here
-	int* num2 = num;
-	//some other region of code; data is deleted
-	cout<<*num2<<"\n";
-	delete num;
-
-	//try to reuse deleted memory(data)
-	cout<<*num2<<"\n";
-	delete num2;
+	//use_dynamic_memory_array(3);
+	//limit_dynamic_memory_scope(3);
+	cout<<"load to stack\n";
+	use_dynamic_array(3);
+	cout<<"unloaded from stack\n";
 
 	return 0;
 }
