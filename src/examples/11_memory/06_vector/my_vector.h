@@ -16,9 +16,10 @@ public:
     int& operator[](int index)const{return elements[index];}
     ~Vector();//Rule 3 of 3 in legacy C++
 private:
-    int* elements;//holds the dynamic list on the heap
     int size{0};//current size of the list; doubles as the current_index
     int capacity;//total available slots for elements    
+    int* elements;//holds the dynamic list on the heap
+
 };
 
 #endif
