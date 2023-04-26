@@ -14,6 +14,7 @@ public:
     Vector& operator=(Vector&& v);//Rule 5 of 5 for modern C++
     int Size()const{return size;}
     int Capacity()const{return capacity;}
+    void PushBack(int value);
     int& operator[](int index){return elements[index];}
     int& operator[](int index)const{return elements[index];}
     ~Vector();//Rule 3 of 3 in legacy C++
@@ -21,7 +22,9 @@ private:
     int size{0};//current size of the list; doubles as the current_index
     int capacity;//total available slots for elements    
     int* elements;//holds the dynamic list on the heap
-
+    const int RESERVE_DEFAULT_SIZE{8};
+    const int RESERVE_DEFAULT_MULTIPLIER{2};
+    void Reserve(int new_size);
 };
 
 #endif
