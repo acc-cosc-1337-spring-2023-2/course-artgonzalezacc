@@ -6,7 +6,7 @@
 TEST_CASE("Verify Test Configuration", "verification") {
 	REQUIRE(true == true);
 }
-/*
+
 TEST_CASE("Test ref ptr params")
 {
 	int num1 = 1;
@@ -19,22 +19,22 @@ TEST_CASE("Test ref ptr params")
 
 TEST_CASE("Test empty my vector size")
 {
-	Vector v(3);
+	Vector<int> v(3);
 
 	REQUIRE(v.Size() == 0);
 }
 
 TEST_CASE("Test my vector capacity")
 {
-	Vector v(3);
+	Vector<int> v(3);
 
 	REQUIRE(v.Capacity() == 3);
 }
 
 TEST_CASE("Test create Vector v1 from existing v")
 {//looking at how class copy works
-	Vector v(3);
-	Vector v1 = v;
+	Vector<int> v(3);
+	Vector<int> v1 = v;
 
 	REQUIRE(v1.Size() == v.Size());
 	REQUIRE(v1.Capacity() == v.Capacity());
@@ -42,27 +42,27 @@ TEST_CASE("Test create Vector v1 from existing v")
 
 TEST_CASE("Test my vector create 2 vectors v v1 overwrite v1 with v")
 {
-	Vector v(3);
-	Vector v1(3);
+	Vector<int> v(3);
+	Vector<int> v1(3);
 	v1 = v;//C++ doesn't know how to handle an equal sign with our class variables
 
 }
 
 TEST_CASE("Test moving v into v1")
 {
-	Vector v(3);//empty after statement 54 executes
-	Vector v1 = std::move(v);
+	Vector<int> v(3);//empty after statement 54 executes
+	Vector<int> v1 = std::move(v);
 }
 
 TEST_CASE("Overwrite existing vector with a value return vector function")
 {
-	Vector v(3);
+	Vector<int> v(3);
 	v = get_vector();
 }
 
 TEST_CASE("Test vector push back w capacity 3")
 {	
-	Vector v(3);
+	Vector<int> v(3);
 	REQUIRE(v.Size() == 0);
 	REQUIRE(v.Capacity() == 3);
 
@@ -85,11 +85,11 @@ TEST_CASE("Test vector push back w capacity 3")
 	REQUIRE(v.Size() == 4);
 	REQUIRE(v.Capacity() == 6);
 	REQUIRE(v[3] == 100);
-}*/
+}
 
 TEST_CASE("Test vector push back w capacity 0")
 {
-	Vector v;
+	Vector<int> v;
 
 	REQUIRE(v.Capacity() == 0);
 	REQUIRE(v.Size() == 0);
