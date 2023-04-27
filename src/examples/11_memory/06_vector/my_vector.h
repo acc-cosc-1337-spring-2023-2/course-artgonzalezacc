@@ -7,6 +7,7 @@
 class Vector
 {
 public:
+    Vector() = default;
     Vector(int s);
     Vector(const Vector& v);//copy constructor: Rule 1 of 3 in legacy C++
     Vector& operator=(const Vector& v); //copy assignment Rule 2 of 3 in legacy C++
@@ -20,8 +21,8 @@ public:
     ~Vector();//Rule 3 of 3 in legacy C++
 private:
     int size{0};//current size of the list; doubles as the current_index
-    int capacity;//total available slots for elements    
-    int* elements;//holds the dynamic list on the heap
+    int capacity{0};//total available slots for elements    
+    int* elements{0};//holds the dynamic list on the heap
     const int RESERVE_DEFAULT_SIZE{8};
     const int RESERVE_DEFAULT_MULTIPLIER{2};
     void Reserve(int new_size);

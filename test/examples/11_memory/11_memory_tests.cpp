@@ -58,7 +58,7 @@ TEST_CASE("Overwrite existing vector with a value return vector function")
 {
 	Vector v(3);
 	v = get_vector();
-}*/
+}
 
 TEST_CASE("Test vector push back w capacity 3")
 {	
@@ -85,4 +85,17 @@ TEST_CASE("Test vector push back w capacity 3")
 	REQUIRE(v.Size() == 4);
 	REQUIRE(v.Capacity() == 6);
 	REQUIRE(v[3] == 100);
+}*/
+
+TEST_CASE("Test vector push back w capacity 0")
+{
+	Vector v;
+
+	REQUIRE(v.Capacity() == 0);
+	REQUIRE(v.Size() == 0);
+
+	v.PushBack(5);
+	REQUIRE(v.Capacity() == 8);
+	REQUIRE(v.Size() == 1);
+	REQUIRE(v[0] == 5);
 }
